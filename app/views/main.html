@@ -1,14 +1,27 @@
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+<div class="row">
+  <h4>Search Song by</h4>
+  <div class="col-sm-12">
+    <input type="text" name="searchArtist" placeholder="Search Artist" maxlength="40" class="search form-control" ng-model="searchArtistInput" />
+    <button type="submit" class="btn btn-default" ng-click="searchArtistFunc()">Submit</button>
+  </div>
+  <!-- <div class="col-sm-4">
+    <input type="text" name="searchAlbum" placeholder="Search Album" maxlength="40" class="search form-control" ng-model="searchAlbum"/>
+  </div>
+  <div class="col-sm-4">
+    <input type="text" name="searchSong" placeholder="Search Song" maxlength="40" class="search form-control" ng-model="searchSong"/>
+  </div> -->
+  <div class="col-sm-4" ng-show="showArtists">
+    <div ng-repeat="Artists in searchArtistVal.artists.items">
+      {{Artists.name}} <button type="button" class="btn btn-success" ng-click="selectArtist(Artists.id)">Select Artist</button>
+    </div>
+  </div>
+  <div class="col-sm-4" ng-show="showTracks">
 
-  <h4>Angular</h4>
+    <div ng-repeat="Track in selectedArtist.tracks">
+      {{Track.name}} <button type="button" class="btn btn-success" ng-click="addTrack()">Add Track to playlist</button>
+    </div>
+  </div>
   <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
+    
   </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
 </div>

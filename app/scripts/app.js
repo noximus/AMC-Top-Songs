@@ -14,7 +14,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'spotify'
   ])
   .config(function ($routeProvider) {
     $routeProvider
