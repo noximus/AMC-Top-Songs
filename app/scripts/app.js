@@ -13,8 +13,6 @@ angular
     'ngCookies',
     'ngResource',
     'ngRoute',
-    'ngSanitize',
-    'ngTouch',
     'spotify'
   ])
   .config(function ($routeProvider) {

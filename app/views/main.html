@@ -10,15 +10,18 @@
   <div class="col-sm-4">
     <input type="text" name="searchSong" placeholder="Search Song" maxlength="40" class="search form-control" ng-model="searchSong"/>
   </div> -->
-  <div class="col-sm-4" ng-show="showArtists">
+  <div class="col-sm-6" ng-show="showArtists">
     <div ng-repeat="Artists in searchArtistVal.artists.items">
-      {{Artists.name}} <button type="button" class="btn btn-success" ng-click="selectArtist(Artists.id)">Select Artist</button>
+      <div class="col-sm-10">{{Artists.name}}</div>
+      <div class="col-sm-2 text-right"><button type="button" class="btn btn-success" ng-click="selectArtist(Artists.id)">Select Artist</button></div> 
     </div>
   </div>
-  <div class="col-sm-4" ng-show="showTracks">
-
+  <div class="col-sm-6" ng-show="showTracks">
+  
     <div ng-repeat="Track in selectedArtist.tracks">
-      {{Track.name}} <button type="button" class="btn btn-success" ng-click="addTrack()">Add Track to playlist</button>
+    <div class="col-sm-9">{{Track.name}}</div>
+    <div class="col-sm-3 text-right"><button type="button" class="btn btn-success" ng-click="AddTracktoPlaylist(Track.id)">Add Track to playlist</button></div>
+      
     </div>
   </div>
   <p>
