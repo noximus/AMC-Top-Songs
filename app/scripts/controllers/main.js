@@ -15,6 +15,7 @@ angular.module('amcTopSongApp')
       title: $scope.playlistTitle,
       songs: $scope.playlist
     }
+    $scope.playlistObjFormatted = JSON.stringify($scope.playlistObj, null , "    ");
     $scope.addToPlaylist = function() {
       $scope.playlist.push($scope.inPlaylist);
       console.log($scope.playlistObj);
