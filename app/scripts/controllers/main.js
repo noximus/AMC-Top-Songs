@@ -10,16 +10,14 @@
 angular.module('amcTopSongApp')
   .controller('MainCtrl', function ($scope,Spotify) {
     $scope.playlistTitle = 'My Top 10 Songs';
-    $scope.playlist = songs: [
-      {
-          track: 'Smells Like Teen Spirit',
-          artist: 'Nirvana',
-          album: 'Smells Like Teen Spirit',
-          note: 'Love this song! Listened to it all of the time on my RV trip!',
-          customImage: 'https://www.stitch.net/wp-content/uploads/2014/10/9.jpg' ,
-          id: '5ghIJDpPoe3CfHMGu71E6T' 
-      }
-    ];
+    $scope.playlist = [];
+    $scope.addToPlaylist = function() {
+      $scope.playlist.push($scope.inPlaylist);
+      console.log($scope.playlist);
+    }
+    $scope.removeFromPlaylist = function(track) {
+      $scope.playlist.splice($scope.playlist.indexOf(track),1);
+    }
     $scope.searchArtistFunc = function() {
       Spotify.search($scope.searchArtistInput, 'artist').then(function (data) {
         $scope.searchArtistVal = data;
@@ -40,7 +38,16 @@ angular.module('amcTopSongApp')
     $scope.AddTracktoPlaylist = function(id) {
       Spotify.getTrack(id).then(function (data) {
         $scope.selectedTrack = data;
-          // console.log(data);
+        $scope.inPlaylist = {
+          track: $scope.selectedTrack.name,
+          artist: $scope.selectedTrack.artists[0].name,
+          album: $scope.selectedTrack.album.name,
+          note: 'Love this song! Listened to it all of the time on my RV trip!',
+          customImage: 'https://www.stitch.net/wp-content/uploads/2014/10/9.jpg' ,
+          id: $scope.selectedTrack.id
+        }
+        $scope.addToPlaylist();
+          // console.log($scope.inPlaylist);
         $scope.showArtists = true;  
         $scope.showTracks = true; 
       });
