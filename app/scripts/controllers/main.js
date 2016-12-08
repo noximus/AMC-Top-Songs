@@ -54,7 +54,7 @@ angular.module('amcTopSongApp')
         $scope.showAlbums = false;  
         $scope.showTracks = true; 
         $scope.showArtistTracks = false;
-        $scope.showTracksfromTracks = false;
+        $scope.showTracksfromTracks = true;
         $scope.showAlbumTracks = true;
       });
     };
