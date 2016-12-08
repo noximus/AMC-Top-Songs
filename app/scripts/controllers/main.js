@@ -18,7 +18,8 @@ angular.module('amcTopSongApp')
     $scope.playlistObjFormatted = JSON.stringify($scope.playlistObj, null , "    ");
     $scope.addToPlaylist = function() {
       $scope.playlist.push($scope.inPlaylist);
-      console.log($scope.playlistObj);
+      // console.log($scope.playlistObj);
+      $scope.playlistObjFormatted = JSON.stringify($scope.playlistObj, null , "    ");
     }
     $scope.removeFromPlaylist = function(track) {
       $scope.playlist.splice($scope.playlist.indexOf(track),1);
