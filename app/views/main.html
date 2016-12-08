@@ -66,11 +66,13 @@
     <div class="col-sm-12">
       <h4>{{playlistTitle}}</h4>
       <div ng-repeat="Tracks in playlist">
-        <div class="col-sm-2">{{Tracks.track}}</div>
-        <div class="col-sm-2">{{Tracks.artist}}</div>
-        <div class="col-sm-2">{{Tracks.album}}</div>
-        <div class="col-sm-4">{{Tracks.note}}</div>
-        <div class="col-sm-2"><button type="button" class="btn btn-danger" ng-click="removeFromPlaylist(Tracks)">Remove</button></div>
+        <div class="row">
+          <div class="col-sm-2">{{Tracks.track}}</div>
+          <div class="col-sm-2">{{Tracks.artist}}</div>
+          <div class="col-sm-2">{{Tracks.album}}</div>
+          <div class="col-sm-4">{{Tracks.note}}</div>
+          <div class="col-sm-2"><button type="button" class="btn btn-danger" ng-click="removeFromPlaylist(Tracks)">Remove</button></div>
+        </div>
       </div>
     </div>
   </div>
