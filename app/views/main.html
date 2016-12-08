@@ -40,19 +40,19 @@
   <!-- Search Results Track -->
   <div class="col-sm-6 scroller" ng-show="showTracks">
     <h5>Tracks</h5>
-    <div ng-repeat="Track in selectedArtist.tracks">
+    <div ng-repeat="Track in selectedArtist.tracks" ng-show="showArtistTracks">
       <div class="col-sm-8">{{Track.name}}</div>
       <div class="col-sm-4">
         <button type="button" class="btn btn-success btn-sm" ng-click="AddTracktoPlaylist(Track.id)">Add Track to playlist</button>
       </div>
     </div>
-    <div ng-repeat="Track in searchTrackVal.tracks.items">
+    <div ng-repeat="Track in searchTrackVal.tracks.items" ng-show="showTracksfromTracks">
       <div class="col-sm-8">{{Track.name}}</div>
       <div class="col-sm-4">
         <button type="button" class="btn btn-success btn-sm" ng-click="AddTracktoPlaylist(Track.id)">Add Track to playlist</button>
       </div>
     </div>
-    <div ng-repeat="Track in selectedAlbumVal.tracks.items">
+    <div ng-repeat="Track in selectedAlbumVal.tracks.items" ng-show="showAlbumTracks">
       <div class="col-sm-8">{{Track.name}}</div>
       <div class="col-sm-4">
         <button type="button" class="btn btn-success btn-sm" ng-click="AddTracktoPlaylist(Track.id)">Add Track to playlist</button>

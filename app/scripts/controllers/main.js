@@ -53,6 +53,9 @@ angular.module('amcTopSongApp')
         $scope.showArtists = false;
         $scope.showAlbums = false;  
         $scope.showTracks = true; 
+        $scope.showArtistTracks = false;
+        $scope.showTracksfromTracks = false;
+        $scope.showAlbumTracks = true;
       });
     };
     $scope.clearAll = function(id) {
@@ -73,6 +76,9 @@ angular.module('amcTopSongApp')
         $scope.showArtists = true;
         $scope.showAlbums = false;  
         $scope.showTracks = true;  
+        $scope.showArtistTracks = true;
+        $scope.showTracksfromTracks = false;
+        $scope.showAlbumTracks = false;
       });
     };
     $scope.selectAlbum = function(id) {
@@ -83,6 +89,9 @@ angular.module('amcTopSongApp')
         $scope.showArtists = false;  
         $scope.showAlbums = true;  
         $scope.showTracks = true;  
+        $scope.showArtistTracks = false;
+        $scope.showTracksfromTracks = false;
+        $scope.showAlbumTracks = true;
       });
     };
     
